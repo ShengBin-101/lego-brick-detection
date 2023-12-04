@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Sheng Bin CV Project</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/eel.js"></script>
+    <script type="text/javascript" src="./index.js"></script>
+    <style>
+        body {
+            position: relative; 
+        }
+        </style>
+
+</head>
+<!-- <body onload="py_video()"></body> -->
+
+<body data-spy="scroll" data-target=".navbar" data-offset="50">
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">  
+        <ul class="navbar-nav">
+            <li class="nav-item">
+            <a class="nav-link" href="#section1">Detection & Count</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" href="#section2">Other Controls</a>
+            </li>
+        </ul>
+        </nav>
+    
+    <div id="section1" class="container-fluid bg-primary" style="padding-top:80px;padding-bottom:10px">
+        <div class="container-sm|md|lg|xl p-4 bg-dark">
+            <h2 class="text-white">Sheng Bin LEGO Bricks Detection</h2>
+        </div>
+            
+    </div>
+      
+
+    <div class="container-sm|md|lg|xl px-3 m-3">
+        <div class="row">
+            <div class="col-md-6">
+                <h4 id="p1">Select the desired video before pressing Start Video</h4>
+                <div class="row mt-3">
+                        <div class="col-md-4">
+                            <p id="p2">Please select a video: </p>
+                        </div>
+                        <div class="col-md-4">
+                            <select class="form-control-lg " id="idOption">
+                                <option value="brick1_01"> brick1_01</option>
+                                <option value="brick1_02"> brick1_02</option>
+                                <option value="brick1_03"> brick1_03</option>
+                                <option value="brick1_04"> brick1_04</option>
+                                <option value="brick1_05"> brick1_05</option>
+                                <option value="brick1_06"> brick1_06</option>
+                                <option value="brick1_07"> brick1_07</option>
+                                <option value="brick3_08"> brick3_08</option>
+                                <option value="brick3_09"> brick3_09</option>
+                                <option value="brick3_10"> brick3_10</option>
+                                <option value="brick3_11"> brick3_11</option>
+                                <option value="brick3_12"> brick3_12</option>
+                                <option value="brick3_13"> brick3_13</option>
+                                <option value="brick6_14"> brick6_14</option>
+                                <option value="brick6_15"> brick6_15</option>
+                                <option value="brick6_16"> brick6_16</option>
+                                <option value="brick6_17"> brick6_17</option>
+                                <option value="brick6_18"> brick6_18</option>
+                                <option value="brick6_19"> brick6_19</option>
+                                <option value="Set1-1-Test"> Set1-1-Test</option>
+                                <option value="Set1-3-Test"> Set1-3-Test</option>
+                                <option value="Set3-6-Test"> Set3-6-Test</option>
+                            </select>
+                        </div>
+                        <div class="btn-group-vertical">
+                            <button onclick="eel.video_feed()" id="btn1" type="button" class="btn mr-3 btn-dark">Start Video</button>
+                            <button onclick="eel.stop_video_feed()" id="btn2" type="button" class="btn mr-3 btn-dark">Stop</button>
+                        </div>
+                </div>
+
+                <div class="row my-3">
+                    <div class="col">
+                        <img class="img-fluid" id="output" src="">
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-6">
+                    <h5> Total Number of Lego Bricks </h5>
+                    <table class="table table-dark table-hover table-sm table-bordered my-3">
+                        <thead>
+                          <tr>
+                            <th>Label</th>
+                            <th>Image</th>
+                            <th>Count</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>green2x8</td>
+                            <td><img src="" id="img_green2x8"></td>
+                            <td id="count_0">0</td>
+                        </tr>
+                        <tr>
+                            <td>Grey16</td>
+                            <td><img src="" id="img_Grey16"></td>
+                            <td id="count_1">0</td>
+                        </tr>
+                        <tr>
+                            <td>lightgray2x4</td>
+                            <td><img src="" id="img_lightgray2x4"></td>
+                            <td id="count_2">0</td>
+                        </tr>
+                        <tr>
+                            <td>lime2x2</td>
+                            <td><img src="" id="img_lime2x2"></td>
+                            <td id="count_3">0</td>
+                        </tr>
+                        <tr>
+                            <td>lime2x4</td>
+                            <td><img src="" id="img_lime2x4"></td>
+                            <td id="count_4">0</td>
+                        </tr>
+                        <tr>
+                            <td>mediumazure4x6</td>
+                            <td><img src="" id="img_mediumazure4x6"></td>
+                            <td id="count_5">0</td>
+                        </tr>
+                        <tr>
+                            <td>mediumblue2x4</td>
+                            <td><img src="" id="img_mediumblue2x4"></td>
+                            <td id="count_6">0</td>
+                        </tr>
+                        <tr>
+                            <td>orange2x2</td>
+                            <td><img src="" id="img_orange2x2"></td>
+                            <td id="count_7">0</td>
+                        </tr>
+                        <tr>
+                            <td>orange2x4</td>
+                            <td><img src="" id="img_orange2x4"></td>
+                            <td id="count_8">0</td>
+                        </tr>
+                        <tr>
+                            <td>yellow2x2</td>
+                            <td><img src="" id="img_yellow2x2"></td>
+                            <td id="count_9">0</td>
+                        </tr>
+                        <tr>
+                            <td>yellow2x3</td>
+                            <td><img src="" id="img_yellow2x3"></td>
+                            <td id="count_10">0</td>
+                        </tr>
+                        <tr>
+                            <td>yellow2x4</td>
+                            <td><img src="" id="img_yellow2x4"></td>
+                            <td id="count_11">0</td>
+                        </tr>
+                        <tr>
+                            <td>Total Number of Bricks</td>
+                            <td></td>
+                            <td id="count_total">0</td>
+                        </tr>
+                        </tbody>
+                      </table>
+            </div>
+        </div>
+
+    </div>
+
+    <div id="section2" class="container-fluid bg-warning" style="padding-top:20px;padding-bottom:20px">
+        <h1>Video Controls</h1>
+        <div class="row">
+            <div class="col">
+                <p>Click on toggle switches to toggle labels</p>
+                <div class="custom-control custom-switch">
+                    <input type="checkbox" class="custom-control-input" id="switch1" onclick="eel.ShowLabel()">
+                    <label class="custom-control-label" for="switch1">Show Label</label>
+                </div>
+                <div class="custom-control custom-switch">
+                    <input type="checkbox" class="custom-control-input" id="switch2" onclick="eel.ShowMeanValue()">
+                    <label class="custom-control-label" for="switch2">Show Average Color</label>
+                </div>
+                <div class="custom-control custom-switch">
+                    <input type="checkbox" class="custom-control-input" id="switch3" onclick="eel.BoundingBox()">
+                    <label class="custom-control-label" for="switch3">Show Bounding Box</label>
+                </div>
+                <div class="custom-control custom-switch">
+                    <input type="checkbox" class="custom-control-input" id="switch4" onclick="eel.MarkCentroid()">
+                    <label class="custom-control-label" for="switch4">Mark Centroid</label>
+                </div>
+                <div class="custom-control custom-switch">
+                    <input type="checkbox" class="custom-control-input" id="switch5" onclick="eel.ShowArea()">
+                    <label class="custom-control-label" for="switch5">Show Area</label>
+                </div>
+                <div class="custom-control custom-switch">
+                    <input type="checkbox" class="custom-control-input" id="switch6" onclick="eel.ShowAspectRatio()">
+                    <label class="custom-control-label" for="switch6">Show Aspect Ratio</label>
+                </div>
+                <div class="custom-control custom-switch">
+                    <input type="checkbox" class="custom-control-input" id="switch7" onclick="eel.ShowBlockCount()">
+                    <label class="custom-control-label" for="switch7">Show Blocks per Frame</label>
+                </div>
+            </div>
+            <div class="col">
+                <p>Click on toggle switches to switch color spaces or detect edge and circles</p>
+                <div class="custom-control custom-switch">
+                    <input type="checkbox" class="custom-control-input" id="switch8" onclick="eel.ShowGray()">
+                    <label class="custom-control-label" for="switch8">Grayscale</label>
+                </div>
+                <div class="custom-control custom-switch">
+                    <input type="checkbox" class="custom-control-input" id="switch9" onclick="eel.ShowBlue()">
+                    <label class="custom-control-label" for="switch9">Blue Channel of BGR Colorspace</label>
+                </div>
+                <div class="custom-control custom-switch">
+                    <input type="checkbox" class="custom-control-input" id="switch10" onclick="eel.ShowGreen()">
+                    <label class="custom-control-label" for="switch10">Green Channel of BGR Colorspace</label>
+                </div>
+                <div class="custom-control custom-switch">
+                    <input type="checkbox" class="custom-control-input" id="switch11" onclick="eel.ShowRed()">
+                    <label class="custom-control-label" for="switch11">Red Channel of BGR Colorspace</label>
+                </div>               
+                <div class="custom-control custom-switch">
+                    <input type="checkbox" class="custom-control-input" id="switch12" onclick="eel.ShowHue()">
+                    <label class="custom-control-label" for="switch12">Hue Channel of HSV Colorspace</label>
+                </div>
+                <div class="custom-control custom-switch">
+                    <input type="checkbox" class="custom-control-input" id="switch13" onclick="eel.ShowSaturation()">
+                    <label class="custom-control-label" for="switch13">Saturation Channel of HSV Colorspace</label>
+                </div>
+                <div class="custom-control custom-switch">
+                    <input type="checkbox" class="custom-control-input" id="switch14" onclick="eel.ShowValue()">
+                    <label class="custom-control-label" for="switch14">Value Channel of HSV Colorspace</label>
+                </div>
+                <div class="custom-control custom-switch">
+                    <input type="checkbox" class="custom-control-input" id="switch15" onclick="eel.ShowEdge()">
+                    <label class="custom-control-label" for="switch15">Canny Edge Detection</label>
+                </div>               
+                <div class="custom-control custom-switch">
+                    <input type="checkbox" class="custom-control-input" id="switch16" onclick="eel.ShowCircle()">
+                    <label class="custom-control-label" for="switch16">Circle Detection</label>
+                </div>  
+
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
