@@ -1,6 +1,6 @@
 # lego-brick-detection
 
-A lego detection and sorting program using OpenCV.
+A lego detection and counting program using OpenCV.
 GUI written using Bootstrap (HTML+CSS+JavaScript).
 
 ![Screenshot of Lego Detector in action.](/lego_detect_ss.png)
